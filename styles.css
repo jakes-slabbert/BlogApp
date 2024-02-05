@@ -18609,13 +18609,13 @@ input.datetimepicker[data-color=yellow] + .bootstrap-datetimepicker-widget butto
 .card-stats {
   margin-bottom: 0;
 }
-.card-stats.upper {
-  box-shadow: 2px 7px 11px rgba(0, 0, 0, 0.4);
-  transform: translate(-20px, -25px);
-  position: absolute;
-  padding: 10px;
-  z-index: 2;
-  min-width: 260px;
+.card .card-stats:hover {
+  box-shadow: 2px 7px 11px rgba(0, 0, 0, 0.4) !important;
+  transform: translate(0) !important;
+  /* position: absolute !important; */
+  padding: 10px !important;
+  z-index: 2 !important;
+  min-width: 260px !important;
 }
 .card-stats .card-body .numbers {
   text-align: right;
@@ -18647,7 +18647,7 @@ input.datetimepicker[data-color=yellow] + .bootstrap-datetimepicker-widget butto
   line-height: 59px;
 }
 @media screen and (max-width: 991px) {
-  .card.card-stats.upper {
+  .card.card-stats:hover {
     position: relative;
     transform: translate(0);
   }
