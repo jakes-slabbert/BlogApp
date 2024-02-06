@@ -106,7 +106,7 @@
   }
 
   &.bg-success {
-    background-color: darken($success, 10%) !important;
+    background: linear-gradient(90deg, #0098f0 0%, #00f2c3 100%) !important;
   }
 
   &.bg-danger {

@@ -1,19 +1,22 @@
 {
-  "name": "blk-design-system-angular",
-  "version": "1.2.0",
+  "name": "fusion-tree-blog",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "description": "BLK Design System Angular: Free Angular Design System For Bootstrap 4 and Angular",
+    "build-prod": "ng build --prod",
+    "description": "FTB - Fusion Tree Blog",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "build-gh": "npm run build --base-href=https://blog.fusiontree.co.za/",
+    "deploy-gh": "ngh --no-silent -d dist/ --repo=https://github.com/jakes-slabbert/BlogApp.git"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/blk-design-system-angular.git"
+    "url": "git+https://github.com/jakes-slabbert/BlogApp.git"
   },
   "keywords": [
     "design system",
