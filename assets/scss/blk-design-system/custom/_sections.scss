@@ -217,7 +217,7 @@
 }
 
 .page-header {
-  min-height: 100vh;
+  min-height: 121vh;
   max-height: 999px;
   padding: 0;
   color: $white;
@@ -244,13 +244,6 @@
   }
 
   .content-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     text-align: center;
     color: $white;
     padding: 0 15px;
@@ -258,7 +251,7 @@
     max-width: 880px;
 
     &.brand {
-      width: 47%;
+      width: 100%;
     }
   }
 
@@ -269,6 +262,10 @@
   }
 
   .container {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    align-content: center;
     height: 100vh;
     z-index: 1;
   }
