@@ -19,7 +19,9 @@ export class PostDetailComponent implements OnInit {
 
   private subscriptions$: Subscription[] = [];
 
-  private currentPost: BehaviorSubject<BlogPost> = new BehaviorSubject<BlogPost>(null);
+  public currentPost: BehaviorSubject<BlogPost> = new BehaviorSubject<BlogPost>(null);
+
+  public isCollapsed = true;
 
   constructor(private route: ActivatedRoute,
     private postsService: PostsService) {

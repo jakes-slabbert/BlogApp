@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import noUiSlider from "nouislider";
 import { BehaviorSubject, Subscription } from "rxjs";
 import { BlogPost } from "src/app/objects/Post";
 import { PostsService } from "src/app/services/posts-service.service";
@@ -12,7 +11,7 @@ export class IndexComponent implements OnInit, OnDestroy {
 
   private subscriptions$: Subscription[] = [];
 
-  private posts: BehaviorSubject<BlogPost[]> = new BehaviorSubject<BlogPost[]>(null);
+  public posts: BehaviorSubject<BlogPost[]> = new BehaviorSubject<BlogPost[]>(null);
 
 
   isCollapsed = true;
@@ -31,30 +30,7 @@ export class IndexComponent implements OnInit, OnDestroy {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("index-page");
 
-    // var slider = document.getElementById("sliderRegular");
-
-    // noUiSlider.create(slider, {
-    //   start: 40,
-    //   connect: false,
-    //   range: {
-    //     min: 0,
-    //     max: 100
-    //   }
-    // });
-
-    // var slider2 = document.getElementById("sliderDouble");
-
-    // noUiSlider.create(slider2, {
-    //   start: [20, 60],
-    //   connect: true,
-    //   range: {
-    //     min: 0,
-    //     max: 100
-    //   }
-    // });
-
     this.subscriptions$.push(this.postsService.posts$.subscribe(posts => {
-      debugger;
       if (posts == null || posts.length == 0) {
         return;
       }
