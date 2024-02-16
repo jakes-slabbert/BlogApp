@@ -14,6 +14,7 @@ import { DOCUMENT } from "@angular/common";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
+  isCollapsed = true;
   constructor(
     private renderer: Renderer2,
     public location: Location,

@@ -13,14 +13,9 @@ export class IndexComponent implements OnInit, OnDestroy {
 
   public posts: BehaviorSubject<BlogPost[]> = new BehaviorSubject<BlogPost[]>(null);
 
-
   isCollapsed = true;
-  focus;
-  focus1;
-  focus2;
   date = new Date();
-  pagination = 3;
-  pagination1 = 1;
+
   constructor(private postsService: PostsService) {}
   scrollToDownload(element: any) {
     element.scrollIntoView({ behavior: "smooth" });
