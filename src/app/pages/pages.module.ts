@@ -18,10 +18,8 @@ import { JwBootstrapSwitchNg2Module } from "jw-bootstrap-switch-ng2";
 import { PopoverModule } from "ngx-bootstrap/popover";
 
 import { IndexComponent } from "./index/index.component";
-import { ProfilepageComponent } from "./examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   imports: [
@@ -44,16 +42,11 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
   ],
   declarations: [
     IndexComponent,
-    ProfilepageComponent,
-    RegisterpageComponent,
-    LandingpageComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    PostsComponent
   ],
   exports: [
-    IndexComponent,
-    ProfilepageComponent,
-    RegisterpageComponent,
-    LandingpageComponent
+    IndexComponent
   ],
   providers: []
 })

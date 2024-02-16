@@ -42,29 +42,51 @@
     </div>
   </nav>
 <div class="wrapper">
-    <div class="page-header header-filter justify-content-center" style="margin-bottom: 2.14em; height: unset;"
-        *ngIf="currentPost.getValue() != null">
-        <div class="container" style="height: unset;">
-            <div class="content-center" style="text-align: left; padding-top: 10%;">
-                <!-- We need the backgound image right under the subtitle. -->
-                <h2 style="font-weight: 700; margin-top: 2.14em; line-height: 32px;">{{currentPost.getValue().Title}}
-                </h2>
-                <h3 style="margin-top: 2.14em; line-height: 32px;">{{currentPost.getValue().Subtitle}}</h3>
-                <img *ngIf="currentPost.getValue().PictureUrl != null" src="{{currentPost.getValue().PictureUrl}}" />
+    <section class="section section-md">
+        <section class="section">
+            <img class="path" style="height: 100%;" src="assets/img/path4.png" />
+
+            <div class="container">
+                <div class="row row-grid justify-content-center">
+                    <div class="col-md-10 mt-lg-10">
+
+                        <div class="row">
+                            <div class="col-12">
+                              <div class="form-group">
+                                <input
+                                  class="form-control"
+                                  placeholder="Search"
+                                  type="text"
+                                  #searchQuery 
+                                  (input)="onSearchUpdated(searchQuery.value)"
+                                  style="font-size: 1.2em;"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        <div *ngFor="let item of data$ | async" class="card card-hover mb-4">
+                            <a href="{{'#/post/' + item.Id}}" class="card-body" style="z-index: 5;">
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-12">
+                                        <div class="numbers">
+                                            <p class="card-title">{{item.Title}}</p>
+                                            <p></p>
+                                            <p class="card-category" style="font-size: 1.0rem;">{{item.Subtitle}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12 justify-content-center"
+                                        style="display: flex; align-items: center;">
+                                        <img src="{{item.PictureUrl}}"
+                                            style="max-height: 165px; max-width: 165px; border-radius: 20%; background: linear-gradient(0deg,#ba54f5,#e14eca);" />
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="page-header header-filter" style="height: unset !important; min-height: unset !important; max-height: unset !important;" *ngIf="currentPost.getValue() != null">
-        <div class="justify-content-center" style="display: flex;">
-            <div class="content-center" style="text-align: left; margin-top: 2.14em;">
-                <p *ngFor="let item of currentPost.getValue().Paragraphs"
-                    style="font-size: 1.2rem; margin-bottom: 2.14em; line-height: 1.5em;">
-                    {{item}}
-                    <br />
-                </p>
-            </div>
-        </div>
-    </div>
+        </section>
+    </section>
     <footer class="footer">
         <div class="container">
           <div class="row justify-content-center">
